@@ -19,7 +19,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{%static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+    <link href="{%static './css/sb-admin-2.min.css'%}" rel="stylesheet">
 </head>
 
 <body>
@@ -32,11 +32,11 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
-    <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static './vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{%static './vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{%static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+    <script src="{%static './vendor/jquery-easing/jquery.easing.min.js'%}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{%static 'js/sb-admin-2.min.js'%}"></script>
@@ -44,17 +44,17 @@
         referrerpolicy="origin"></script>
     <script type="text/javascript">
         tinymce.init({
-                selector: 'textarea',
-                plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                tinycomments_mode: 'embedded',
-                tinycomments_author: 'Author name',
-                mergetags_list: [
-                    { value: 'First.Name', title: 'First Name' },
-                    { value: 'Email', title: 'Email' },
-                ],
-                ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
-            });
+            selector: 'textarea',
+            plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ],
+            ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
+        });
     </script>
 </body>
 
