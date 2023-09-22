@@ -8,9 +8,14 @@
         <div>
             <a href="{% url 'topicCreate' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-plus"></i> Add Topic</a>
+
+            {% if topics|length > 0 %}
             <a href="{% url 'chaptersList' topics.0.chapter.course.id %}"
                 class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-backward"></i>
                 Back</a>
+            {% endif %}
+
+
         </div>
     </div>
 

@@ -8,9 +8,12 @@
         <div>
             <a href="{% url 'chapterCreate' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-plus"></i> Add Chapter</a>
+            {% if chapters|length > 0%}
             <a href="{% url 'courseList'  %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                     class="fas fa-backward"></i>
                 Back</a>
+            {% endif %}
+
         </div>
     </div>
 
