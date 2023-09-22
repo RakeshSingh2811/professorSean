@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "course",
     'tinymce',
+    "instructors",
     "django_bootstrap5",
 ]
 
