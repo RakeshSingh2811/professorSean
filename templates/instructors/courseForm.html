@@ -1,0 +1,27 @@
+{% extends 'instructors/base.html' %}
+{% load django_bootstrap5 %}
+{% block maincontent %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+        {% if "courseCreate" in request.path %}
+        <h1 class="h3 mb-0 text-gray-800">Create Course</h1>
+        {% elif "courseUpdate" in request.path %}
+        <h1 class="h3 mb-0 text-gray-800">Update Course</h1>
+        {% else %}
+        <h1 class="h3 mb-0 text-gray-800">Delete Course</h1>
+        {% endif %}
+    </div>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {% if "courseDelete" in request.path %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        {% endif %}
+        {% bootstrap_form form %}
+
+        {% bootstrap_button button_type="submit" content="OK" %}
+        {% bootstrap_button button_type="reset" content="Cancel" %}
+    </form>
+</div>
+{% endblock maincontent %}

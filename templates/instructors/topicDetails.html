@@ -1,0 +1,31 @@
+{% extends 'instructors/base.html' %}
+{% block maincontent %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">{{topic}}</h1>
+        <div>
+            <a href="{% url 'topicUpdate' topic.id %}"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-edit"></i> edit</a>
+            <a href="{% url 'topicList' topic.chapter.id %}"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-list"></i> Topics
+                List</a>
+        </div>
+    </div>
+
+    {% if topic.video %}
+    <video controls width="100%">
+        <source src="{{topic.video.url}}" type="video/webm" />
+        <source src="{{topic.video.url}}" type="video/mov" />
+        <source src="{{topic.video.url}}" type="video/mp4" />
+        <source src="{{topic.video.url}}" type="video/avi" />
+        <source src="{{topic.video.url}}" type="video/mkv" />
+    </video>
+    {% endif %}
+    <div class="topicDescription text-dark">
+        {{topic.description | safe}}
+    </div>
+
+</div>
+{% endblock maincontent %}

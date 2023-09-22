@@ -1,0 +1,55 @@
+{% extends 'instructors/base.html' %}
+{% block maincontent %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Topics</h1>
+        <div>
+            <a href="{% url 'topicCreate' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas fa-plus"></i> Add Topic</a>
+            <a href="{% url 'chaptersList' topics.0.chapter.course.id %}"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-backward"></i>
+                Back</a>
+        </div>
+    </div>
+
+    {% if topics|length > 0 %}
+    <div class="table-responsive">
+        <table class="table table-primary table-bordered table-striped text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Chapter</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                {% for topic in topics %}
+                <tr class="">
+                    <td>{{topic}}</td>
+                    <td>{{topic.chapter}}</td>
+                    <td>{{topic.chapter.course}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'topicDetails' topic.id %}"> <i class="fas fa-eye"></i>
+                            View</a>
+                        <a class="btn btn-primary" href="{% url 'topicDelete' topic.pk %}"> <i
+                                class="fas fa-trash-alt"></i> Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h1 class="text-center">No Topics for now please add them</h1>
+    {% endif %}
+
+
+</div>
+{% endblock maincontent %}

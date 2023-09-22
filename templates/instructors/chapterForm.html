@@ -1,0 +1,26 @@
+{% extends 'instructors/base.html' %}
+{% load django_bootstrap5 %}
+{% block maincontent %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+        {% if "chapterCreate" in request.path %}
+        <h1 class="h3 mb-0 text-gray-800">Create Chapter</h1>
+        {% elif "chapterUpdate" in request.path %}
+        <h1 class="h3 mb-0 text-gray-800">Update Chapter</h1>
+        {% else %}
+        <h1 class="h3 mb-0 text-gray-800">Delete Chapter</h1>
+        {% endif %}
+    </div>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {% if "chapterDelete" in request.path %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        {% endif %}
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="OK" %}
+        {% bootstrap_button button_type="reset" content="Cancel" %}
+    </form>
+</div>
+{% endblock maincontent %}
