@@ -2,10 +2,15 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from dotenv import load_dotenv
 
 
 def main():
     """Run administrative tasks."""
+    if 'WEBSITE_HOSTNAME' not in os.environ:
+        print("Loading environment variables for .env file")
+        load_dotenv('./.env')
+
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ProfessorSean.settings")
     try:
         from django.core.management import execute_from_command_line
