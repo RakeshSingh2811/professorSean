@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+    <a class="navbar-brand text-white" href="{url 'login'}">Professor Sean</a>
+</nav>
+<div id="single-wrapper">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow p-3">
+                <form method="POST" class="frm-single">
+                    <div class="inside">
+                        <div class="title"><strong>Professor Sean</strong> Login </div>
+
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <div class="margin-top-30">
+                            {% bootstrap_button button_type="submit" content="Login" %}
+                        </div>
+                        <p class="text-center margin-top-15">Don't have a Account? <strong><a
+                                    href="{% url 'signup' %}">Sign
+                                    up</a></strong></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

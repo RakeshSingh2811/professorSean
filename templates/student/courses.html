@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+{% include "student/navbar.html" %}
+<div class="container">
+    <h4>Welcome {{user.first_name}} {{user.last_name}} </h4>
+    <h5>Courses</h5>
+    <div class="row">
+
+        {% for course in courses %}
+        <div class="col-md-2">
+            <a href="{% url 'courseDetails' course_id=course.id %}" class="text-decoration-none">
+                <div class="card">
+                    <img src="{{course.image.url}}" alt="{{course}}">
+                </div>
+                <p>{{course}}</p>
+            </a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}
