@@ -1,5 +1,5 @@
 import os
-from settings.py import *
+from ProfessorSean.settings import *
 
 
 SECRET_KEY = os.environ['SECRET_KEY']
