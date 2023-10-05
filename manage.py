@@ -10,7 +10,7 @@ def main():
     if 'WEBSITE_HOSTNAME' not in os.environ:
         print("Loading environment variables for .env file")
         load_dotenv('./.env')
-    settings_module = "azureproject.production" if 'WEBSITE_HOSTNAME' in os.environ else 'ProfessorSean.settings'
+    settings_module = "ProfessorSean.deployment" if 'WEBSITE_HOSTNAME' in os.environ else 'ProfessorSean.settings'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
     try:
         from django.core.management import execute_from_command_line
