@@ -1,5 +1,5 @@
 import os
-from settings import *
+from settings.py import *
 
 
 SECRET_KEY = os.environ['SECRET_KEY']
