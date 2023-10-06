@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Welcome to Professor Sean</h1>
-<a href="{% url 'instructorHome' %}">Instructors Functionality</a>
+<div class="container">
+    <h1>Welcome to Professor Sean</h1>
+    <ul>
+        <li>
+            <a href="{% url 'instructorHome' %}">Instructors' Functionality</a>
+        </li>
+        <li>
+            <a href="{% url 'studentlogin' %}">Students' Functionality</a>
+        </li>
+    </ul>
+
+</div>
 {% endblock content %}

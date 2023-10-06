@@ -5,14 +5,14 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'course' %}">Courses</a>
+                <a class="nav-link" href="{% url 'studentcourse' %}">Courses</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">{{user.first_name}}</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="#">profile</a>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                    <a class="dropdown-item" href="{% url 'studentlogout' %}">Logout</a>
                 </div>
             </li>
         </ul>
