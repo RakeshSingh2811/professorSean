@@ -39,8 +39,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-SCM_DO_BUILD_DURING_DEPLOYMENT = True
-WHITENOISE_MANIFEST_STRICT = False
+
 
 LOGGING = {
     'version': 1,
