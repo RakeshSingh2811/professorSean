@@ -53,7 +53,6 @@ class TopicDetails(LoginRequiredMixin, generic.TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super(TopicDetails, self).get_context_data(*args, **kwargs)
         course = Course.objects.get(id=context['course_id'])
-        print(context)
         context['course'] = course
         chapters = Chapter.objects.filter(course=course)
         context['chapters'] = chapters
