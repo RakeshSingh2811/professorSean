@@ -9,6 +9,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to='uploads/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    price = models.FloatField()
 
     def __str__(self):
         return self.name

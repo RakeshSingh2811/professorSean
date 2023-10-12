@@ -12,5 +12,11 @@ urlpatterns = [
     path("courseDetails/<course_id>",
          views.CourseDetails.as_view(), name="courseDetails"),
     path("topicDetails/<course_id>/chapter/<chapter_id>/topic/<topic_id>",
-         views.TopicDetails.as_view(), name="topicDetails")
+         views.TopicDetails.as_view(), name="topicDetails"),
+    path('payment/<course_id>', views.payment, name='payment'),
+    path('create-checkout-session/',
+         views.create_checkout_session, name='checkout'),
+    path('success/', views.success, name='payment_success'),
+    path('cancel/', views.cancel, name='payment_cancel'),
+
 ]

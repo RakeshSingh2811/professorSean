@@ -119,10 +119,11 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_PRIVATE_KEY = os.environ.get('STRIPE_SECRET_KEY')
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste,searchreplace,image,imagetools,media,codesample,link,code",
     'theme': "silver",
@@ -134,5 +135,3 @@ TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
 LOGIN_REDIRECT_URL = 'studentcourse'
 LOGOUT_REDIRECT_URL = 'studentlogin'
-
-DEBUG_PROPAGATE_EXCEPTIONS = True
