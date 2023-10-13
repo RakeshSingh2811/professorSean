@@ -110,7 +110,8 @@ def create_checkout_session(request):
 
 
 def payment(request, course_id):
-    return render(request, 'student/checkout.html')
+    course = Course.objects.get(id=course_id)
+    return render(request, 'student/checkout.html', {course: course})
 
 # success view
 
