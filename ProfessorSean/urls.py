@@ -24,7 +24,7 @@ urlpatterns = [
     path("", views.Home_Page.as_view(), name="home"),
     path("instructors/", include('instructors.urls')),
     path("student/", include('student.urls')),
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('media/<path>', serve, {'document_root': settings.MEDIA_ROOT}),
     path('static/<path>', serve, {'document_root': settings.STATIC_ROOT}),
