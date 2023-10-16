@@ -10,6 +10,12 @@ class User(auth.models.User, auth.models.PermissionsMixin):
         return self.username
 
 
-class Subsription(models.Model):
-    student = models.ForeignKey(User, on_delete=models.CASCADE)
+class Order(models.Model):
+    email = models.EmailField(max_length=254)
+    paid = models.BooleanField(default="False")
+    amount = models.IntegerField(default=0)
+    description = models.CharField(default=None, max_length=800)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.email

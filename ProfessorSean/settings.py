@@ -124,6 +124,7 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_PRIVATE_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_ENDPOINT_SECRET = 'whsec_8c723ed4b4ce89d0b481f9411d4125c0cf86a0d078d4f88c5e2aeaba0985c58c'
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste,searchreplace,image,imagetools,media,codesample,link,code",
     'theme': "silver",
