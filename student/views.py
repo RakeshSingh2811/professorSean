@@ -31,6 +31,7 @@ class Courses(LoginRequiredMixin, generic.TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super(Courses, self).get_context_data(*args, **kwargs)
         context['courses'] = Course.objects.all()
+        print(context)
         return context
 
 
@@ -115,8 +116,7 @@ def create_checkout_session(request):
             "order_id": order.id
         },
         mode='payment',
-        success_url=request.build_absolute_uri(
-            reverse('studentcourse')),
+        success_url=request.build_absolute_uri(reverse('studentcourse')),
         cancel_url=request.build_absolute_uri(reverse('payment_cancel'))
     )
     messages.success(
