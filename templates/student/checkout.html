@@ -51,13 +51,13 @@
 </div>
 <script type="text/javascript">
     // Create an instance of the Stripe object with your publishable API key
-    var stripe = Stripe('pk_test_51O1kIxInhpixAxXP7h5hGlRvCybaZNfEyKa74wEJTo5ODsl8P5g8mQbLr1qfguKqEuueqXwO87KXDxjCz05s7yBc00IKYX7K85');
+    var stripe = Stripe('{{stripe_publishable_key}}');
     var checkoutButton = document.getElementById('checkout-button');
 
     checkoutButton.addEventListener('click', function () {
         // Create a new Checkout Session using the server-side endpoint you
         // created in step 3.
-        fetch('/student/create-checkout-session/', {
+        fetch("{%url 'checkout' %}", {
             method: 'POST',
             body: JSON.stringify({
                 course: '{{course}}',

@@ -12,10 +12,16 @@ class User(auth.models.User, auth.models.PermissionsMixin):
 
 class Order(models.Model):
     email = models.EmailField(max_length=254)
-    paid = models.BooleanField(default="False")
     amount = models.IntegerField(default=0)
-    description = models.CharField(default=None, max_length=800)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    stripe_payment_intent = models.CharField(
+        max_length=200
+    )
+    # This field can be changed as status
+    has_paid = models.BooleanField(
+        default=False,
+        verbose_name='Payment Status'
+    )
 
     def __str__(self):
         return self.email

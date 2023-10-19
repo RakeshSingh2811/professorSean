@@ -16,7 +16,6 @@ urlpatterns = [
     path('payment/<course_id>', views.payment, name='payment'),
     path('create-checkout-session/',
          views.create_checkout_session, name='checkout'),
-    path('success/', views.success, name='payment_success'),
+    path('success/', views.PaymentSuccessView.as_view(), name='payment_success'),
     path('cancel/', views.cancel, name='payment_cancel'),
-    path('webhook/', views.stripe_webhook),
 ]

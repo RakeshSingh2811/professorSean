@@ -131,7 +131,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 10,
 }
-
+APPEND_SLASH = False
 TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
 LOGIN_REDIRECT_URL = 'studentcourse'
