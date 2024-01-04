@@ -78,20 +78,20 @@ class CourseCreateView(CreateView):
     model = models.Course
     fields = "__all__"
     template_name = "instructors/courseForm.html"
-    success_url = "/instructors/courses"
+    success_url = "/instructors/courses/"
 
 
 class CourseUpdateView(UpdateView):
     model = models.Course
     fields = "__all__"
     template_name = "instructors/courseForm.html"
-    success_url = "/instructors/courses"
+    success_url = "/instructors/courses/"
 
 
 class CourseDeleteView(DeleteView):
     model = models.Course
     template_name = "instructors/courseForm.html"
-    success_url = "/instructors/courses"
+    success_url = "/instructors/courses/"
 
 
 class ChapterCreateView(CreateView):
